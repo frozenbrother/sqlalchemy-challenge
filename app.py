@@ -11,9 +11,9 @@ from flask import Flask, jsonify
 # Database Setup
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
-# reflect an existing database into a new model
+# Use existing database into a new model
 Base = automap_base()
-# reflect the tables
+#  Reflect tables
 Base.prepare(engine, reflect=True)
 
 # Save reference to the table
@@ -36,7 +36,7 @@ def home():
 
 @app.route("/api/v1.0/prcp")
 def prcp():
-    # Create our session (link) from Python to the DB
+    # Create our session from Python to the DB
     session = Session(engine)
 
     """Return a list of all prcp values"""
