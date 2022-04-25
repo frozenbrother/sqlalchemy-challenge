@@ -75,13 +75,13 @@ def station():
 
 @app.route("/api/v1.0/tobs")
 def tobs():
-    # Create our session (link) from Python to the DB
+    # Create our session from Python to the DB
     session = Session(engine)
     # Query results
     
     results = session.query(Measurement.station, Measurement.date, Measurement.tobs).\
     filter(Measurement.station == "USC00519397").\
-    filter(Measurement.date >'2016-08-23').\
+    filter(Measurement.date >'2016-08-24').\
     order_by(Measurement.date).all()
     
     session.close()
